@@ -9,7 +9,8 @@
 # [YMMV](http://en.wiktionary.org/wiki/YMMV)
 
 # Datasets ####
-# R comes with a lot of built in datasets to play with see:
+# R comes with a lot of built in datasets to play with 
+# see:
 library(help = "datasets")
 
 # Summary functions ####

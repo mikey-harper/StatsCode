@@ -10,4 +10,5 @@ packs <- c("ggplot2", # slick & easy graphs
 print("Loading required packages:")
 print(packs)
 
+# be careful - this will return a FALSE if a package doesn't load but the script will NOT stop!
 lapply(packs, require, character.only = T)

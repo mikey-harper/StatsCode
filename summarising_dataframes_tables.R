@@ -14,8 +14,14 @@
 library(help = "datasets")
 library(data.table) # if needed for data.table manipulation
 
+# clear the workspace
+rm(list=ls())
+
+# load mtcars ----
+mtcars <- mtcars
+
 # Summary functions ####
 summary(cars)
-* str(dataframe)  will produce a useful object summary of the frame
+# str(dataframe)  will produce a useful object summary of the frame
 str(cars)
 

@@ -12,10 +12,10 @@
 # R comes with a lot of built in datasets to play with 
 # see:
 library(help = "datasets")
+library(data.table) # if needed for data.table manipulation
 
 # Summary functions ####
 summary(cars)
 * str(dataframe)  will produce a useful object summary of the frame
 str(cars)
 
-# Reshaping & manipulating data ####

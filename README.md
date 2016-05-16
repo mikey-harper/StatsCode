@@ -1,5 +1,5 @@
-#Snippets
-A place to keep code snippets that might be useful (to me and you!)
+#StatsCode
+A place to keep code snippets and examples of analysis methods so I don't have to go rummaging through other code to find them.
 
 ###Terms of Use
 GPL: V2 - http://choosealicense.com/licenses/gpl-2.0/

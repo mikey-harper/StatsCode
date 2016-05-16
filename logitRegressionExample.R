@@ -10,6 +10,8 @@ x <- c("rms", # more regression tools
 # do this to install them if needed
 #install.packages(x)
 print("Loading required packages")
+
+# be careful - this will return a FALSE if a package doesn't load but the script will NOT stop!
 lapply(x, require, character.only = T)
 
 # Functions ----

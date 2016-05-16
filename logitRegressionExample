@@ -1,0 +1,33 @@
+
+# Code to run & test logistic regression models
+
+rm(list = ls()) 
+# Load required packages ----
+x <- c("rms", # more regression tools
+       "car" # regression tools
+       )
+       
+# do this to install them if needed
+#install.packages(x)
+print("Loading required packages")
+lapply(x, require, character.only = T)
+
+# Functions ----
+
+# This creates a function called logisticPseudoR2s().  
+# Usage: logisticPseudoR2s(myLogisticModel)  
+# From: Field, A. P., Miles, J., and Field, Z. C. (2012). Discovering statistics using R: and sex and drugs and rock ’n’ roll. London: Sage  #
+
+logisticPseudoR2s <- function(LogModel) {
+  dev <- LogModel$deviance 
+  nullDev <- LogModel$null.deviance 
+  modelN <-  length(LogModel$fitted.values)
+  R.hl <-  1 -  dev / nullDev
+  R.mf <- 1 - ln(dev/nullDev)
+  R.cs <- 1- exp ( -(nullDev - dev) / modelN)
+  R.n <- R.cs / ( 1 - ( exp (-(nullDev / modelN))))
+  cat("Pseudo R^2 for logistic regression\n")
+  cat("Hosmer and Lemeshow R^2  ", round(R.hl, 3), "\n")
+  cat("Cox and Snell R^2        ", round(R.cs, 3), "\n")
+  cat("Nagelkerke R^2           ", round(R.n, 3),    "\n")
+}

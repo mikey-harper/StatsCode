@@ -1,13 +1,30 @@
 # Code to run & test logistic regression models ----
 # code by: b.anderson@soton.ak.uk (@dataknut)
 
+
+# R has a very useful built-in dataset called mtcars
+# http://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html
+
+# A data frame with 32 observations on 11 variables.
+# [, 1] 	mpg 	Miles/(US) gallon
+# [, 2] 	cyl 	Number of cylinders
+# [, 3] 	disp 	Displacement (cu.in.)
+# [, 4] 	hp 	Gross horsepower
+# [, 5] 	drat 	Rear axle ratio
+# [, 6] 	wt 	Weight (1000 lbs)
+# [, 7] 	qsec 	1/4 mile time
+# [, 8] 	vs 	V/S
+# [, 9] 	am 	Transmission (0 = automatic, 1 = manual)
+# [,10] 	gear 	Number of forward gears
+# [,11] 	carb 	Number of carburetors 
+
 rm(list = ls()) 
 # Load required packages ----
 x <- c("rms", # more regression tools
        "car" # regression tools
        )
        
-# do this to install them if needed
+# do this to install them first if needed
 #install.packages(x)
 print("Loading required packages")
 

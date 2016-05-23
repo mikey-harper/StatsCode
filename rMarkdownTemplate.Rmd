@@ -16,7 +16,7 @@ output:
 
 ```{r setup, include=FALSE}
 # set default echo to FALSE (code not in output)
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(warning = FALSE)
 knitr::opts_chunk$set(message = FALSE)
 knitr::opts_chunk$set(fig_caption = TRUE)

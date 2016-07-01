@@ -168,8 +168,10 @@ bc_p1 <- 0.05/length(mpgModel1$coefficients)
 
 # save results as log odds
 # the cbind function simply 'glues' the columns together side by side
-mpgModel1Results_bf <- cbind(Coef = coef(mpgModel1), 
-                              confint(mpgModel1, level = 1 - bc_p1))
+mpgModel1Results_bf <- cbind(Coef = coef(mpgModel1), # coefficients
+                              confint(mpgModel1, level = 1 - bc_p1), # 95% CI
+                             Pr = round(summary(mpgModel1)$coefficients[,4], 3) # p value if required
+                             )
 mpgModel1Results_bf
 
 # Model 2

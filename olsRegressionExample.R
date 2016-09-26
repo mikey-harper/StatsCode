@@ -18,9 +18,13 @@
 # [,10] 	gear 	Number of forward gears
 # [,11] 	carb 	Number of carburetors 
 
-rm(list = ls()) 
+setwd("~/github/StatsCode") # just in case
+
+rm(list = ls()) # clear memory just in case
+
 # Load required packages ----
-x <- c("rms", # more regression tools
+x <- c("rms", #  regression tools
+       "stargazer", # nice reporting of regressions
        "car" # regression tools
        )
        
@@ -35,7 +39,9 @@ lapply(x, require, character.only = T)
 # Load mtcars ----
 mtcars <- mtcars
 
-summary(mtcars)
+summary(mtcars) # base method
+stargazer(mtcars, title = "Descriptive statistics for cars", 
+          type="html", out="cars.html") # stargazer method
 
 # Examine dataset ----
 names(mtcars)
@@ -57,6 +63,8 @@ mpgModel1 <- lm(mpg ~ qsec, mtcars)
 
 # results?
 summary(mpgModel1)
+
+stargazer(mpgModel1, output = "html", out = "mpgModel1.html")
 
 # Diagnostics ----
 

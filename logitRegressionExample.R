@@ -127,7 +127,7 @@ plot(loMpgModel2)
 spreadLevelPlot(loMpgModel2)
 
 # Compare models ----
-anova(loMpgModel1,loMpgModel2)
+anova(loMpgModel1,loMpgModel2, test="Chisq")
 
 # or use Chi sq to test difference in deviance
 # use abs() in case model 1 has more variables than model 2

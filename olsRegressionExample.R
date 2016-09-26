@@ -191,5 +191,5 @@ mpgModel2Results_bf <- cbind(Coef = coef(mpgModel2),
 
 mpgModel2Results_bf
 
-# Reporting mul;ptiple models using stargazer ----
+# Reporting multiple models using stargazer ----
 stargazer(mpgModel1, mpgModel2, output = "html", out = "sgCompareModels.html")

@@ -41,7 +41,7 @@ mtcars <- mtcars
 
 summary(mtcars) # base method
 stargazer(mtcars, title = "Descriptive statistics for cars", 
-          type="html", out="cars.html") # stargazer method
+          type="html", out="sgCarsDescriptivesTable.html") # stargazer method
 
 # Examine dataset ----
 names(mtcars)
@@ -63,8 +63,6 @@ mpgModel1 <- lm(mpg ~ qsec, mtcars)
 
 # results?
 summary(mpgModel1)
-
-stargazer(mpgModel1, output = "html", out = "mpgModel1.html")
 
 # Diagnostics ----
 
@@ -192,3 +190,6 @@ mpgModel2Results_bf <- cbind(Coef = coef(mpgModel2),
                             confint(mpgModel2, level = 1 - bc_p2))
 
 mpgModel2Results_bf
+
+# Reporting mul;ptiple models using stargazer ----
+stargazer(mpgModel1, mpgModel2, output = "html", out = "sgCompareModels.html")

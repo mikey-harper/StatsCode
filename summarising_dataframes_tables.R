@@ -12,16 +12,20 @@
 # R comes with a lot of built in datasets to play with 
 # see:
 library(help = "datasets")
+
+# Libraries
 library(data.table) # if needed for data.table manipulation
+library(stargazer) # flexible & pretty tables
 
 # clear the workspace
 rm(list=ls())
 
-# load mtcars ----
+# load mpg ----
 mtcars <- mtcars
 
 # Summary functions ####
-summary(cars)
+summary(mtcars)
 # str(dataframe)  will produce a useful object summary of the frame
-str(cars)
+str(mtcars)
 
+stargazer(mtcars, type="text") # works best with RMarkdown

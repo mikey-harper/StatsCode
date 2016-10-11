@@ -9,6 +9,7 @@
 <meta name="generator" content="pandoc" />
 
 
+<meta name="author" content="Ben Anderson (b.anderson@soton.ac.uk/@dataknut) [Energy &amp; Climate Change, Faculty of Engineering &amp; Environment, University of Southampton]" />
 
 
 <title>R Notebook: Stargazer Package Tests</title>
@@ -116,6 +117,8 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">R Notebook: Stargazer Package Tests</h1>
+<h4 class="author"><em>Ben Anderson (<a href="mailto:b.anderson@soton.ac.uk/@dataknut">b.anderson@soton.ac.uk/@dataknut</a>) [Energy &amp; Climate Change, Faculty of Engineering &amp; Environment, University of Southampton]</em></h4>
+<h4 class="date"><em>Last run at: 2016-10-11 23:17:30</em></h4>
 
 </div>
 
@@ -125,12 +128,13 @@ $(document).ready(function () {
 <li><a href="#summary">Summary</a></li>
 <li><a href="#kable">Kable</a></li>
 <li><a href="#stargazer">Stargazer</a></li>
+<li><a href="#references">References</a></li>
 </ul>
 </div>
 
 <div id="setup" class="section level1">
 <h1>Setup</h1>
-<pre class="r"><code>startTime &lt;- Sys.time()
+<pre class="r"><code>startTime &lt;- Sys.time() # always good to time your code
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(warning = TRUE)
 knitr::opts_chunk$set(message = TRUE)
@@ -144,6 +148,12 @@ library(stargazer)</code></pre>
 ## Please cite as:</code></pre>
 <pre><code>##  Hlavac, Marek (2015). stargazer: Well-Formatted Regression and Summary Statistics Tables.</code></pre>
 <pre><code>##  R package version 5.2. http://CRAN.R-project.org/package=stargazer</code></pre>
+<p>Key packages used:</p>
+<ul>
+<li>base R - for the basics <span class="citation">(R Core Team 2016)</span></li>
+<li>stargazer - for pretty tables <span class="citation">(Hlavac 2015)</span></li>
+<li>knitr - to create this document <span class="citation">(Xie 2016)</span></li>
+</ul>
 </div>
 <div id="summary" class="section level1">
 <h1>Summary</h1>
@@ -418,7 +428,21 @@ F Statistic
 </table>
 <p>It has a lot of options that can be used to change what goes where…</p>
 <hr />
-<p><strong>Meta:</strong> Analysis completed in: 0.452 seconds using <a href="https://cran.r-project.org/package=knitr">knitr</a> in <a href="http://www.rstudio.com">RStudio</a>.</p>
+<p><strong>Meta:</strong> Analysis completed in: 0.996 seconds using <a href="https://cran.r-project.org/package=knitr">knitr</a> in <a href="http://www.rstudio.com">RStudio</a>.</p>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+<div id="refs" class="references">
+<div id="ref-stargazer">
+<p>Hlavac, Marek. 2015. <em>Stargazer: Well-Formatted Regression and Summary Statistics Tables</em>. Cambridge, USA: Harvard University. <a href="http://CRAN.R-project.org/package=stargazer" class="uri">http://CRAN.R-project.org/package=stargazer</a>.</p>
+</div>
+<div id="ref-baseR">
+<p>R Core Team. 2016. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
+</div>
+<div id="ref-knitr">
+<p>Xie, Yihui. 2016. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr" class="uri">https://CRAN.R-project.org/package=knitr</a>.</p>
+</div>
+</div>
 </div>
 
 

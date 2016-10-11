@@ -9,6 +9,7 @@
 <meta name="generator" content="pandoc" />
 
 
+<meta name="author" content="Ben Anderson (b.anderson@soton.ac.uk/@dataknut) [Energy &amp; Climate Change, Faculty of Engineering &amp; Environment, University of Southampton]" />
 
 
 <title>R Notebook: Stargazer Package Tests</title>
@@ -167,6 +168,8 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">R Notebook: Stargazer Package Tests</h1>
+<h4 class="author"><em>Ben Anderson (<a href="mailto:b.anderson@soton.ac.uk/@dataknut">b.anderson@soton.ac.uk/@dataknut</a>) [Energy &amp; Climate Change, Faculty of Engineering &amp; Environment, University of Southampton]</em></h4>
+<h4 class="date"><em>Last run at: 2016-10-11 23:17:28</em></h4>
 
 </div>
 
@@ -176,6 +179,7 @@ $(document).ready(function () {
 <li><a href="#summary"><span class="toc-section-number">2</span> Summary</a></li>
 <li><a href="#kable"><span class="toc-section-number">3</span> Kable</a></li>
 <li><a href="#stargazer"><span class="toc-section-number">4</span> Stargazer</a></li>
+<li><a href="#references"><span class="toc-section-number">5</span> References</a></li>
 </ul>
 </div>
 
@@ -195,6 +199,12 @@ library(stargazer)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Key packages used:</p>
+<ul>
+<li>base R - for the basics <span class="citation">(R Core Team 2016)</span></li>
+<li>stargazer - for pretty tables <span class="citation">(Hlavac 2015)</span></li>
+<li>knitr - to create this document <span class="citation">(Xie 2016)</span></li>
+</ul>
 </div>
 <div id="summary" class="section level1">
 <h1><span class="header-section-number">2</span> Summary</h1>
@@ -287,82 +297,9 @@ kable(caption = &quot;Cars&quot;,
 <pre class="r"><code># NB: we need to force knitr to keep the html (asis)
 stargazer(cars, type = &quot;html&quot;)</code></pre>
 <!-- rnb-source-end -->
-<table style="text-align:center">
-<tr>
-<td colspan="6" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Statistic
-</td>
-<td>
-N
-</td>
-<td>
-Mean
-</td>
-<td>
-St. Dev.
-</td>
-<td>
-Min
-</td>
-<td>
-Max
-</td>
-</tr>
-<tr>
-<td colspan="6" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-speed
-</td>
-<td>
-50
-</td>
-<td>
-15.400
-</td>
-<td>
-5.288
-</td>
-<td>
-4
-</td>
-<td>
-25
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-dist
-</td>
-<td>
-50
-</td>
-<td>
-42.980
-</td>
-<td>
-25.769
-</td>
-<td>
-2
-</td>
-<td>
-120
-</td>
-</tr>
-<tr>
-<td colspan="6" style="border-bottom: 1px solid black">
-</td>
-</tr>
-</table>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Although it’s not too clear how to change the default cell padding etc.</p>
 <p>Stargazer is especially good at regression model outputs:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -370,138 +307,29 @@ dist
 <pre class="r"><code>model1 &lt;- lm(speed ~ dist, cars)
 stargazer(model1, type = &quot;html&quot;)</code></pre>
 <!-- rnb-source-end -->
-<table style="text-align:center">
-<tr>
-<td colspan="2" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-<em>Dependent variable:</em>
-</td>
-</tr>
-<tr>
-<td>
-</td>
-<td colspan="1" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-speed
-</td>
-</tr>
-<tr>
-<td colspan="2" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-dist
-</td>
-<td>
-0.166<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(0.017)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Constant
-</td>
-<td>
-8.284<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(0.874)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td colspan="2" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Observations
-</td>
-<td>
-50
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-R<sup>2</sup>
-</td>
-<td>
-0.651
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Adjusted R<sup>2</sup>
-</td>
-<td>
-0.644
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Residual Std. Error
-</td>
-<td>
-3.156 (df = 48)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-F Statistic
-</td>
-<td>
-89.567<sup>***</sup> (df = 1; 48)
-</td>
-</tr>
-<tr>
-<td colspan="2" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-<em>Note:</em>
-</td>
-<td style="text-align:right">
-<sup><em></sup>p&lt;0.1; <sup><strong></sup>p&lt;0.05; <sup></strong></em></sup>p&lt;0.01
-</td>
-</tr>
-</table>
 <!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>It has a lot of options that can be used to change what goes where…</p>
+<hr />
+<p><strong>Meta:</strong> Analysis completed in: 1.188 seconds using <a href="https://cran.r-project.org/package=knitr">knitr</a> in <a href="http://www.rstudio.com">RStudio</a>.</p>
+</div>
+<div id="references" class="section level1">
+<h1><span class="header-section-number">5</span> References</h1>
+<!-- rnb-text-end -->
+<div id="refs" class="references">
+<div id="ref-stargazer">
+<p>Hlavac, Marek. 2015. <em>Stargazer: Well-Formatted Regression and Summary Statistics Tables</em>. Cambridge, USA: Harvard University. <a href="http://CRAN.R-project.org/package=stargazer" class="uri">http://CRAN.R-project.org/package=stargazer</a>.</p>
+</div>
+<div id="ref-baseR">
+<p>R Core Team. 2016. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
+</div>
+<div id="ref-knitr">
+<p>Xie, Yihui. 2016. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr" class="uri">https://CRAN.R-project.org/package=knitr</a>.</p>
+</div>
+</div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAnUiBOb3RlYm9vazogU3RhcmdhemVyIFBhY2thZ2UgVGVzdHMnCm91dHB1dDoKICBodG1sX2RvY3VtZW50OgogICAgdG9jOiB5ZXMKICBodG1sX25vdGVib29rOgogICAgbnVtYmVyX3NlY3Rpb25zOiB5ZXMKICAgIHRvYzogeWVzCi0tLQoKIyBTZXR1cApgYGB7ciBzZXR1cH0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBUUlVFKQprbml0cjo6b3B0c19jaHVuayRzZXQod2FybmluZyA9IFRSVUUpCmtuaXRyOjpvcHRzX2NodW5rJHNldChtZXNzYWdlID0gVFJVRSkKa25pdHI6Om9wdHNfY2h1bmskc2V0KGZpZ19jYXB0aW9uID0gVFJVRSkKa25pdHI6Om9wdHNfY2h1bmskc2V0KHRpZHkgPSBUUlVFKQoKCmxpYnJhcnkoa25pdHIpICMgZm9yIGthYmxlCmxpYnJhcnkoc3RhcmdhemVyKQpgYGAKCiMgU3VtbWFyeQoKV2UgY2FuIHByaW50IGFuIG9yZGluYXJ5IHRhYmxlOgoKYGBge3Igb2xkVGFibGV9CnN1bW1hcnkoY2FycykKYGBgCgojIEthYmxlCgpXZSBjYW4gYWxzbyBkbyB0aGF0IHVzaW5nIGthYmxlOgoKYGBge3Iga2FibGVUYWJsZX0KdCA8LSBzdW1tYXJ5KGNhcnMpCmthYmxlKGNhcHRpb24gPSAiQ2FycyIsCiAgICAgIHQKICAgICAgKQpgYGAKCiMgU3RhcmdhemVyCgpXZSBjYW4gYWxzbyB1c2Ugc3RhcmdhemVyOgpgYGB7ciBzdGFyZ2F6ZXJUYWJsZSwgcmVzdWx0cz0nYXNpcyd9CiMgTkI6IHdlIG5lZWQgdG8gZm9yY2Uga25pdHIgdG8ga2VlcCB0aGUgaHRtbCAoYXNpcykKc3RhcmdhemVyKGNhcnMsIHR5cGUgPSAiaHRtbCIpCmBgYAoKU3RhcmdhemVyIGlzIGVzcGVjaWFsbHkgZ29vZCBhdCByZWdyZXNzaW9uIG1vZGVsIG91dHB1dHM6CgpgYGB7ciBtb2RlbFRhYmxlLCByZXN1bHRzPSdhc2lzJ30KbW9kZWwxIDwtIGxtKHNwZWVkIH4gZGlzdCwgY2FycykKc3RhcmdhemVyKG1vZGVsMSwgdHlwZSA9ICJodG1sIikKYGBg</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAnUiBOb3RlYm9vazogU3RhcmdhemVyIFBhY2thZ2UgVGVzdHMnCmF1dGhvcjogQmVuIEFuZGVyc29uIChiLmFuZGVyc29uQHNvdG9uLmFjLnVrL0BkYXRha251dCkgW0VuZXJneSAmIENsaW1hdGUgQ2hhbmdlLAogIEZhY3VsdHkgb2YgRW5naW5lZXJpbmcgJiBFbnZpcm9ubWVudCwgVW5pdmVyc2l0eSBvZiBTb3V0aGFtcHRvbl0KZGF0ZTogJ0xhc3QgcnVuIGF0OiBgciBTeXMudGltZSgpYCcKCm91dHB1dDoKICBodG1sX2RvY3VtZW50OgogICAgdG9jOiB5ZXMKICBodG1sX25vdGVib29rOgogICAgbnVtYmVyX3NlY3Rpb25zOiB5ZXMKICAgIHRvYzogeWVzCmJpYmxpb2dyYXBoeTogfi9iaWJsaW9ncmFwaHkuYmliCi0tLQoKIyBTZXR1cApgYGB7ciBzZXR1cH0Kc3RhcnRUaW1lIDwtIFN5cy50aW1lKCkgIyBhbHdheXMgZ29vZCB0byB0aW1lIHlvdXIgY29kZQprbml0cjo6b3B0c19jaHVuayRzZXQoZWNobyA9IFRSVUUpCmtuaXRyOjpvcHRzX2NodW5rJHNldCh3YXJuaW5nID0gVFJVRSkKa25pdHI6Om9wdHNfY2h1bmskc2V0KG1lc3NhZ2UgPSBUUlVFKQprbml0cjo6b3B0c19jaHVuayRzZXQoZmlnX2NhcHRpb24gPSBUUlVFKQprbml0cjo6b3B0c19jaHVuayRzZXQodGlkeSA9IFRSVUUpCgoKbGlicmFyeShrbml0cikgIyBmb3Iga2FibGUKbGlicmFyeShzdGFyZ2F6ZXIpCmBgYAoKS2V5IHBhY2thZ2VzIHVzZWQ6CgogKiBiYXNlIFIgLSBmb3IgdGhlIGJhc2ljcyBbQGJhc2VSXQogKiBzdGFyZ2F6ZXIgLSBmb3IgcHJldHR5IHRhYmxlcyBbQHN0YXJnYXplcl0KICoga25pdHIgLSB0byBjcmVhdGUgdGhpcyBkb2N1bWVudCBbQGtuaXRyXQogCiMgU3VtbWFyeQoKV2UgY2FuIHByaW50IGFuIG9yZGluYXJ5IHRhYmxlOgoKYGBge3Igb2xkVGFibGV9CnN1bW1hcnkoY2FycykKYGBgCgojIEthYmxlCgpXZSBjYW4gYWxzbyBkbyB0aGF0IHVzaW5nIGthYmxlOgoKYGBge3Iga2FibGVUYWJsZX0KdCA8LSBzdW1tYXJ5KGNhcnMpCmthYmxlKGNhcHRpb24gPSAiQ2FycyIsCiAgICAgIHQKICAgICAgKQpgYGAKCiMgU3RhcmdhemVyCgpXZSBjYW4gYWxzbyB1c2Ugc3RhcmdhemVyOgpgYGB7ciBzdGFyZ2F6ZXJUYWJsZSwgcmVzdWx0cz0nYXNpcyd9CiMgTkI6IHdlIG5lZWQgdG8gZm9yY2Uga25pdHIgdG8ga2VlcCB0aGUgaHRtbCAoYXNpcykKc3RhcmdhemVyKGNhcnMsIHR5cGUgPSAiaHRtbCIpCmBgYAoKQWx0aG91Z2ggaXQncyBub3QgdG9vIGNsZWFyIGhvdyB0byBjaGFuZ2UgdGhlIGRlZmF1bHQgY2VsbCBwYWRkaW5nIGV0Yy4KClN0YXJnYXplciBpcyBlc3BlY2lhbGx5IGdvb2QgYXQgcmVncmVzc2lvbiBtb2RlbCBvdXRwdXRzOgoKYGBge3IgbW9kZWxUYWJsZSwgcmVzdWx0cz0nYXNpcyd9Cm1vZGVsMSA8LSBsbShzcGVlZCB+IGRpc3QsIGNhcnMpCnN0YXJnYXplcihtb2RlbDEsIHR5cGUgPSAiaHRtbCIpCmBgYAoKSXQgaGFzIGEgbG90IG9mIG9wdGlvbnMgdGhhdCBjYW4gYmUgdXNlZCB0byBjaGFuZ2Ugd2hhdCBnb2VzIHdoZXJlLi4uCgoqKioKX19NZXRhOl9fCkFuYWx5c2lzIGNvbXBsZXRlZCBpbjogYHIgcm91bmQoU3lzLnRpbWUoKSAtIHN0YXJ0VGltZSwzKWAgc2Vjb25kcyB1c2luZyBba25pdHJdKGh0dHBzOi8vY3Jhbi5yLXByb2plY3Qub3JnL3BhY2thZ2U9a25pdHIpIGluIFtSU3R1ZGlvXShodHRwOi8vd3d3LnJzdHVkaW8uY29tKS4KCiMgUmVmZXJlbmNlcwo=</div>
 
 
 

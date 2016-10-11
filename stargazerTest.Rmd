@@ -1,11 +1,16 @@
 ---
 title: 'R Notebook: Stargazer Package Tests'
+author: Ben Anderson (b.anderson@soton.ac.uk/@dataknut) [Energy & Climate Change,
+  Faculty of Engineering & Environment, University of Southampton]
+date: 'Last run at: `r Sys.time()`'
+
 output:
   html_document:
     toc: yes
   html_notebook:
     number_sections: yes
     toc: yes
+bibliography: ~/bibliography.bib
 ---
 
 # Setup
@@ -22,6 +27,12 @@ library(knitr) # for kable
 library(stargazer)
 ```
 
+Key packages used:
+
+ * base R - for the basics [@baseR]
+ * stargazer - for pretty tables [@stargazer]
+ * knitr - to create this document [@knitr]
+ 
 # Summary
 
 We can print an ordinary table:
@@ -63,3 +74,5 @@ It has a lot of options that can be used to change what goes where...
 ***
 __Meta:__
 Analysis completed in: `r round(Sys.time() - startTime,3)` seconds using [knitr](https://cran.r-project.org/package=knitr) in [RStudio](http://www.rstudio.com).
+
+# References

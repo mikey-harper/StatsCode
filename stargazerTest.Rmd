@@ -10,7 +10,7 @@ output:
 
 # Setup
 ```{r setup}
-startTime <- Sys.time() # always good to time youru code
+startTime <- Sys.time() # always good to time your code
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(warning = TRUE)
 knitr::opts_chunk$set(message = TRUE)

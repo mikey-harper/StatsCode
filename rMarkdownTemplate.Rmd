@@ -1,7 +1,9 @@
 ---
 title: "RMarkdown Template"
-author: "Ben Anderson"
-date: "(b.anderson@soton.ac.uk, @dataknut)"
+author: Ben Anderson (b.anderson@soton.ac.uk/@dataknut) [Energy & Climate Change,
+  Faculty of Engineering & Environment, University of Southampton]
+date: 'Last run at: `r Sys.time()`'
+
 output:
   html_document:
     fig_caption: yes

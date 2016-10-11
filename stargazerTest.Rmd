@@ -1,0 +1,65 @@
+---
+title: 'R Notebook: Stargazer Package Tests'
+output:
+  html_document:
+    toc: yes
+  html_notebook:
+    number_sections: yes
+    toc: yes
+---
+
+# Setup
+```{r setup}
+startTime <- Sys.time() # always good to time youru code
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(warning = TRUE)
+knitr::opts_chunk$set(message = TRUE)
+knitr::opts_chunk$set(fig_caption = TRUE)
+knitr::opts_chunk$set(tidy = TRUE)
+
+
+library(knitr) # for kable
+library(stargazer)
+```
+
+# Summary
+
+We can print an ordinary table:
+
+```{r oldTable}
+summary(cars)
+```
+
+# Kable
+
+We can also do that using kable:
+
+```{r kableTable}
+t <- summary(cars)
+kable(caption = "Cars",
+      t
+      )
+```
+
+# Stargazer
+
+We can also use stargazer:
+```{r stargazerTable, results='asis'}
+# NB: we need to force knitr to keep the html (asis)
+stargazer(cars, type = "html")
+```
+
+Although it's not too clear how to change the default cell padding etc.
+
+Stargazer is especially good at regression model outputs:
+
+```{r modelTable, results='asis'}
+model1 <- lm(speed ~ dist, cars)
+stargazer(model1, type = "html")
+```
+
+It has a lot of options that can be used to change what goes where...
+
+***
+__Meta:__
+Analysis completed in: `r round(Sys.time() - startTime,3)` seconds using [knitr](https://cran.r-project.org/package=knitr) in [RStudio](http://www.rstudio.com).

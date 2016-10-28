@@ -1,0 +1,5 @@
+html_document:
+  fig_caption: yes
+  number_sections: yes
+  toc: yes
+  toc_float: true

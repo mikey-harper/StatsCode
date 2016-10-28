@@ -1,7 +1,6 @@
 ---
 title: "Play with distributions"
-author: "Ben Anderson (@datatknut)"
-date: 'Last run at: `r Sys.time()`'
+
 output:
   html_document: default
   html_notebook: default

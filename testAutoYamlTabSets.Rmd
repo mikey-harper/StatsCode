@@ -58,5 +58,4 @@ kable(caption = "PlantGrowth",
 )
 ```
 
-
 # References

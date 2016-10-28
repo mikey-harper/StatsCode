@@ -1,0 +1,62 @@
+---
+title: "Test Auto-yaml and Tab sets"
+author: "Ben Anderson `@dataknut`"
+date: 'Last run at: `r Sys.time()`'
+output:
+  html_document
+bibliography: ~/bibliography.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(knitr)
+```
+
+# Purpose
+
+To test:
+
+ * [auto-inclusion](http://rmarkdown.rstudio.com/html_document_format.html#shared_options) of the `_output.yaml` file;
+ * [tabsets](http://rmarkdown.rstudio.com/html_document_format.html#tabbed_sections)
+
+Key packages used:
+
+ * base R - for the basics [@baseR]
+ * knitr - to create this document [@knitr]
+ 
+# Auto-yaml
+
+Anything below (within) the `output:` container seems to be OK in the yaml file. But not title, author etc. nor the bibliograpphy option. Which is a bit of a pain...
+
+# Tabset Heading {.tabset}
+
+This is really very useful...
+
+## mtcars
+
+```{r }
+kable(caption = "mtcars",
+      summary(mtcars)
+)
+```
+
+## ChickWeight
+
+```{r }
+kable(caption = "ChickWeight",
+      summary(ChickWeight)
+)
+```
+
+
+## PlantGrowth
+
+```{r }
+kable(caption = "PlantGrowth",
+      summary(PlantGrowth)
+)
+```
+
+
+# References

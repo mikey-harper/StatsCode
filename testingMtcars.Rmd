@@ -7,6 +7,9 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+library(ggplot2)
+library(data.table)
 ```
 
 ## Test partition by transmission
@@ -42,4 +45,16 @@ ggplot(mpgModel2DF, aes(x=term, y=estimate)) +
                   width=.2,                    # Width of the error bars
                   position=position_dodge(.9)
                   )
+```
+
+```{r prediction}
+mtcarsDT$mpgPrediction <- predict(mpgModel2)
+
+addRow <- as.data.table("NA", "5", "150", "116","4","3","14", "0",  "1",    "4",    "3",       "Manual")
+rbind(mtcarsDT,addRow)
+mtcarsDT$mpgPrediction <- predict(mpgModel2)
+ggplot(mtcarsDT, aes(x=wt, y=mpg, color = "Observed")) +
+    geom_point(shape=1) +    # Use hollow circles
+    # theme(legend.position="bottom") +
+    geom_point(aes(y = mpgPrediction, color = "Prediction"))
 ```

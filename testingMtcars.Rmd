@@ -88,6 +88,10 @@ plotModels
 
 ```
 
+Things to fix:
+
+ * the bar with only one variable in model 2 expands.
+ 
 # Prediction
 
 ```{r prediction}

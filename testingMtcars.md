@@ -162,6 +162,10 @@ plotModels
 
 ![](testingMtcars_files/figure-html/testPlot2-1.png)<!-- -->
 
+Things to fix:
+
+ * the bar with only one variable in model 2 expands.
+ 
 # Prediction
 
 

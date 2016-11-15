@@ -10,4 +10,5 @@
 *.docx
 *.zip
 *.md
+*.log*
 *_cache*

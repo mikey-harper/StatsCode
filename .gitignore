@@ -1,6 +1,13 @@
 .Rproj.user
 .Rhistory
 .RData
-.Rproj
-.html
-.md
+.DS_Store
+*.xls
+*.xlsx
+*.Rproj*
+*.pdf
+*.html
+*.docx
+*.zip
+*.md
+*_cache*

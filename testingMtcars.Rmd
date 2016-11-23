@@ -29,7 +29,7 @@ ggplot(mtcarsDT, aes(x=qsec, y=mpg, color=transmission)) +
 # Create model estimation results suitable for graphing with 95% CI
 
 ```{r testPlot1}
-mpgModel2 <- lm(mpg ~ qsec + wt, mtcarsDT)
+mpgModel2 <- lm(mpg ~ qsec + wt * hp, mtcarsDT) # interaction term
 
 # basic results
 summary(mpgModel2)

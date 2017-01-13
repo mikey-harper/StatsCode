@@ -6,7 +6,7 @@ output:
 bibliography: ~/bibliography.bib
 ---
 
-#Create function to install packages
+# Create function to install packages
 
 This is Luke Blunden's really nice function for installing packages that can't be loaded. Use with caution in a script which may not have internet access...
 
